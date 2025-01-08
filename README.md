@@ -1,2 +1,2 @@
 # Basic To Do List + Pomodoro
- Using python and GUIZERO
+ Using python and tktiner
