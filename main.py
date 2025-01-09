@@ -1,27 +1,34 @@
+def addTask():
+    listbox.insert(listbox.size(), entrybox.get())
+    #listbox.config(height=root.size())
+
+
+def deleteTask():
+    listbox.delete(listbox.curselection())
+
 from tkinter import *
+
 
 #root window
 root = Tk()
-#listbox=Listbox(root)
-#listbox.pack()
+listbox=Listbox(root)
+listbox.pack()
+
+
 
 #title and dimensions
-root.title("To Do List")
+root.title("To Do List -> Shit we gotta do")
 root.geometry('650x400')
 
-lbl = Label(root, text="What we suppose to do?")
-lbl.grid()
-    #entry
-to_do=Entry(root,width=10)
-to_do.grid()
+#add a task button
+entrybox = Entry(root)
+entrybox.pack()
 
-#display user text when clicked
-def clicked():
-    res = to_do.get()
-    lbl2 = Label(root,text=res)
-    lbl2.grid()
 
-#button
-btn = Button(root,text="click me", fg="red", command=clicked)
-btn.grid()
+btn = Button(root, text="submit", command=addTask)
+btn.pack()
+
+#delete button
+deleteBtn = Button(root, text="delete", command=deleteTask)
+deleteBtn.pack()
 root.mainloop()
